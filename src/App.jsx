@@ -10,9 +10,10 @@ import { FaLock } from "react-icons/fa";
 import axios from "axios";
 
 function App() {
-  const [selectedAmount, setSelectedAmount] = useState(1);
-  const [selectedMethod, setSelectedMethod] = useState(1);
+  const [selectedAmount, setSelectedAmount] = useState(0);
+  const [selectedMethod, setSelectedMethod] = useState(0);
   const [currentAmount, setCurrentAmount] = useState(0);
+  const [customAmount, setCustomAmount] = useState(null);
   const [deepLink, setDeepLink] = useState("");
 
   const generateDeepLink = async () => {
@@ -20,7 +21,7 @@ function App() {
       const response = await axios.post(
         "https://api.flizpay.de/transactions",
         {
-          amount: currentAmount,
+          amount: customAmount !== "0" ? Number(customAmount) : currentAmount,
           currency: "EUR",
           externalId: "amffedfdfrghtmasffsemxcmasfmmffrkxa",
         },
@@ -40,7 +41,7 @@ function App() {
   useEffect(() => {
     generateDeepLink();
     console.log(deepLink);
-  }, [currentAmount]);
+  }, [currentAmount, customAmount]);
 
   const amounts = [
     {
@@ -122,12 +123,10 @@ function App() {
 
               <input
                 className="amountInput"
-                type="number"
+                type="text"
                 placeholder={amount.amount}
-                value={currentAmount}
-                onChange={(event) =>
-                  setCurrentAmount(Number(event.target.value))
-                }
+                value={customAmount}
+                onChange={(event) => setCustomAmount(event.target.value)}
               />
               <h1 className="euro">€</h1>
             </div>
