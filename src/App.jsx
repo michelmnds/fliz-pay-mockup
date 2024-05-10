@@ -104,7 +104,7 @@ function App() {
                 className="circle"
               />
 
-              <h2 className="amount">{amount.amount} €</h2>
+              <h2 className="amount">€ {amount.amount}</h2>
             </div>
           ) : (
             <div
@@ -120,6 +120,7 @@ function App() {
                 className="circle"
               />
 
+              <h1 className="euro">€</h1>
               <input
                 className="amountInput"
                 type="text"
@@ -127,7 +128,6 @@ function App() {
                 value={customAmount}
                 onChange={(event) => setCustomAmount(event.target.value)}
               />
-              <h1 className="euro">€</h1>
             </div>
           );
         })}
