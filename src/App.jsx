@@ -27,7 +27,7 @@ function App() {
         {
           headers: {
             "x-api-key":
-              "663de90ca896d34b7acb5930d841a2c52030ab5ec3f282cb5f54cd62db0cc72c",
+              "66367907c028c9e4118843a914277ce0c9d4b38a97615b89b74d15a93b301718",
           },
         }
       );
