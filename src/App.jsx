@@ -40,7 +40,6 @@ function App() {
 
   useEffect(() => {
     generateDeepLink();
-    console.log(deepLink);
   }, [currentAmount, customAmount]);
 
   const amounts = [
