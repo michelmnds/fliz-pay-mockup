@@ -32,15 +32,16 @@
 .amountInput{
     border: none;
     outline: none;
-    height: 60px;
+    height: 20px;
     width: 50%;
     font-size: 24px;
-    color: #002F5F;
+    color: grey;
     font-weight: bolder;
+    z-index: -1;
 }
 .amountInput::placeholder{
     font-size: 24px;
-    color: #002F5F;
+    color: grey;
 }
 .input {
     width: 100%;
@@ -50,6 +51,7 @@
     align-items: center;
     justify-content: start;
     gap: 20px;
+    z-index: 2;
 }
 .circle{
     width: 19px;
