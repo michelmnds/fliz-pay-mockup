@@ -21,7 +21,7 @@ function App() {
       const response = await axios.post(
         "https://api.flizpay.de/transactions",
         {
-          amount: customAmount !== "0" ? Number(customAmount) : currentAmount,
+          amount: selectedAmount === 4 ? Number(customAmount) : currentAmount,
           currency: "EUR",
           externalId: "amffedfdfrghtmasffsemxcmasfmmffrkxa",
         },
